@@ -8,6 +8,7 @@ import { Book } from './book';
 })
 export class CrudService {
 REST_API:string="http://localhost:8000/api"
+private  _url="https://jsonplaceholder.typicode.com/users";
 httpHeaders=new HttpHeaders().set('Content-Type','application/json');
 
 
@@ -43,6 +44,11 @@ DeleteBook(id:any):Observable<any>{
   catchError(this.handleError)
   )
 }
+
+
+  getdetail(): Observable<any>{
+    return this.Http_clint.get(this._url);
+  }
 
 handleError(error: HttpErrorResponse){
   let errormsg='';

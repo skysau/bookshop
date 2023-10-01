@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { AuthGardGuard } from './shared/auth-gard.guard';
+import { AuthServiceService } from './shared/auth-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddBookComponent,
     BookDetailComponent,
-    BookListComponent
+    BookListComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,8 @@ import { BookListComponent } from './components/book-list/book-list.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGardGuard,AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 
