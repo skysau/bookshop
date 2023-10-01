@@ -38,20 +38,14 @@ export class LogInComponent implements OnInit {
 this.Users.getdetail()
 .subscribe(res=>{
   const user = res.find((a:any)=>{
-    if(a.email=== this.loginform.value.username && this.loginform.value.password ==="pass123"){
-     this.U_name=a.id;
-     this.name=a.name;
-
-    }
     return a.email=== this.loginform.value.username && this.loginform.value.password ==="pass123";
   });
 
   if(user){
 
     alert('login sucess!!! Wellcome,'+ this.name);
-   
+    this.Authservice.setdata(true)
     this.loginform.reset();
-    
     this.Router.navigate(['book-list']);
   }
   else{

@@ -15,16 +15,5 @@ this.islogin=data;
   getdata(){
     return this.islogin;
   }
-  setuserid(ss:number){
-    this.userid=ss;
-  }
-  getuserid(){
-    return this.userid;
-  }
-  setuser(ss:string){
-    this.user=ss;
-  }
-  getuser(){
-    return this.user;
-  }
+ 
 }

@@ -21,9 +21,10 @@ const routes: Routes = [
 },
 {
   path:'update-book/:id',component:BookDetailComponent,canActivate :[AuthGardGuard]
-},{
-  path:'**' , component:LogInComponent
-}
+},
+// {
+//   path:'**' , component:LogInComponent
+// }
 ];
 
 @NgModule({
